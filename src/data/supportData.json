@@ -1,0 +1,15 @@
+
+[
+  {
+    "icon": "mapPin",
+    "title": "Regional Centre List",
+    "description": "Find your nearest IGNOU Regional Centre",
+    "url": "https://ignou.ac.in/ignou/aboutignou/regional/website"
+  },
+  {
+    "icon": "globe",
+    "title": "Student Support Portal",
+    "description": "Get help with various student services",
+    "url": "http://www.ignou.ac.in/ignou/studentzone"
+  }
+]

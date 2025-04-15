@@ -1,0 +1,15 @@
+
+[
+  {
+    "icon": "bookOpen",
+    "title": "eGyankosh",
+    "description": "Access study materials and resources",
+    "url": "http://egyankosh.ac.in/"
+  },
+  {
+    "icon": "fileText",
+    "title": "Assignment Status",
+    "description": "Check your assignment submission status",
+    "url": "https://admission.ignou.ac.in/changeadmdata/StatusAssignment.ASP"
+  }
+]

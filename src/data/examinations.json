@@ -1,0 +1,15 @@
+
+[
+  {
+    "icon": "fileText",
+    "title": "Exam Form Submission",
+    "description": "Apply for term-end examinations",
+    "url": "https://exam.ignou.ac.in/"
+  },
+  {
+    "icon": "award",
+    "title": "Grade Card / Results",
+    "description": "Check your examination results",
+    "url": "https://ignou.ac.in/ignou/studentzone/results/1"
+  }
+]

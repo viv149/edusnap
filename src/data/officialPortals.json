@@ -1,0 +1,15 @@
+
+[
+  {
+    "icon": "globe",
+    "title": "IGNOU Home Page",
+    "description": "Official website of Indira Gandhi National Open University",
+    "url": "https://ignou.ac.in/"
+  },
+  {
+    "icon": "graduationcap",
+    "title": "Admission Portal",
+    "description": "Register and apply for IGNOU programs",
+    "url": "https://ignouadmission.samarth.edu.in/"
+  }
+]
