@@ -20,10 +20,10 @@ const NoticesSection = () => {
     
     try {
       // Replace with your actual SheetDB API endpoint
-      const sheetId = '1HGjBcS9RvqSAy0OZdTn8ZTTJITqT38y2D__oOlp_BWo';
+      const sheetId = 'c06f2b1d-b74e-4d08-9bc6-16224eab8b00';
       const data = await fetchNoticesFromSheet(sheetId);
       setNotices(data);
-      
+      console.log(data);
       toast({
         title: "Success!",
         description: "Latest notices loaded from Google Sheets",

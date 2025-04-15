@@ -25,7 +25,7 @@ export interface SheetLink {
  */
 export const fetchNoticesFromSheet = async (sheetId: string): Promise<SheetNotice[]> => {
   try {
-    const response = await fetch(`https://sheetdb.io/api/v1/${sheetId}`);
+    const response = await fetch(`https://api.sheetbest.com/sheets/${sheetId}`);
     if (!response.ok) {
       throw new Error(`Failed to fetch data: ${response.status}`);
     }
