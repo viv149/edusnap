@@ -12,7 +12,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center mb-4">
               <GraduationCap className="h-6 w-6 text-white mr-2" />
-              <span className="font-bold text-lg">IGNOU Help Hub</span>
+              <span className="font-bold text-lg">EduSnap</span>
             </div>
             <p className="text-gray-300 mb-4">
               A one-stop portal for IGNOU students to access notices, find official links, and get assignment help.
