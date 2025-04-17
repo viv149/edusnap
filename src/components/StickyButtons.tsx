@@ -9,7 +9,7 @@ const StickyButtons = () => {
   // Function to handle WhatsApp contact
   const contactWhatsApp = () => {
     const message = "Hi, I need help with my IGNOU assignment for [Subject]";
-    window.open(`https://wa.me/919876543210?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/919145855703?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   // Function to scroll to top

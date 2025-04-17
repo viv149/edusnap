@@ -11,6 +11,11 @@ const Header = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
+  // WhatsApp contact function
+  const contactWhatsApp = () => {
+    window.open('https://wa.me/919145855703?text=Hi,%20I%20need%20help%20with%20my%20IGNOU%20assignment', '_blank');
+  };
+
   return (
     <header className="sticky top-0 z-50 w-full bg-white border-b shadow-sm">
       <div className="container flex justify-between items-center py-3 px-4 md:px-6">
@@ -25,7 +30,7 @@ const Header = () => {
           <a href="#assignment" className="text-gray-600 hover:text-ignou-purple">Assignment Help</a>
           <a href="#links" className="text-gray-600 hover:text-ignou-purple">Important Links</a>
           <a href="#contact" className="text-gray-600 hover:text-ignou-purple">Contact</a>
-          <Button variant="outline" className="border-ignou-purple text-ignou-purple hover:bg-ignou-purple hover:text-white">
+          <Button variant="outline" onClick={contactWhatsApp} className="border-ignou-purple text-ignou-purple hover:bg-ignou-purple hover:text-white">
             WhatsApp Support
           </Button>
         </nav>
@@ -48,7 +53,7 @@ const Header = () => {
             <a href="#assignment" className="text-gray-600 hover:text-ignou-purple py-2 border-b">Assignment Help</a>
             <a href="#links" className="text-gray-600 hover:text-ignou-purple py-2 border-b">Important Links</a>
             <a href="#contact" className="text-gray-600 hover:text-ignou-purple py-2 border-b">Contact</a>
-            <Button variant="outline" className="border-ignou-purple text-ignou-purple hover:bg-ignou-purple hover:text-white">
+            <Button variant="outline" onClick={contactWhatsApp} className="border-ignou-purple text-ignou-purple hover:bg-ignou-purple hover:text-white">
               WhatsApp Support
             </Button>
           </div>

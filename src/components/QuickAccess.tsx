@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 const QuickAccess = () => {
   // WhatsApp contact function
   const contactWhatsApp = () => {
-    window.open('https://wa.me/919876543210?text=Hi,%20I%20need%20help%20with%20my%20IGNOU%20assignment', '_blank');
+    window.open('https://wa.me/919145855703?text=Hi,%20I%20need%20help%20with%20my%20IGNOU%20assignment', '_blank');
   };
 
   // Quick access items with icons, text, and destinations

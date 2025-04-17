@@ -58,8 +58,8 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-4">Contact Info</h3>
             <ul className="space-y-2">
-              <li className="text-gray-300">WhatsApp: +91 98765 43210</li>
-              <li className="text-gray-300">Email: support@ignouhelphub.com</li>
+              <li className="text-gray-300">WhatsApp: +91 9145855703</li>
+              <li className="text-gray-300">Email: rks914585@gmail.com</li>
               <li className="text-gray-300">Hours: 9 AM - 6 PM (Mon-Sat)</li>
             </ul>
           </div>
