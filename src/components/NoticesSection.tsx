@@ -1,16 +1,14 @@
-
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Calendar, FileText, ExternalLink, RefreshCw, AlertTriangle } from "lucide-react";
+import { Calendar, FileText, ExternalLink, AlertTriangle } from "lucide-react";
 import noticesData from "@/data/notices.json";
 import { fetchNoticesFromSheet, SheetNotice } from "@/utils/googleSheets";
 import { useToast } from "@/hooks/use-toast";
 
 const NoticesSection = () => {
   const [notices, setNotices] = useState<SheetNotice[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [useSheetData, setUseSheetData] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const { toast } = useToast();
 
@@ -19,11 +17,9 @@ const NoticesSection = () => {
     setError(null);
     
     try {
-      // Replace with your actual SheetDB API endpoint
       const sheetId = 'c06f2b1d-b74e-4d08-9bc6-16224eab8b00';
       const data = await fetchNoticesFromSheet(sheetId);
       setNotices(data);
-      console.log(data);
       toast({
         title: "Success!",
         description: "Latest notices loaded from Google Sheets",
@@ -31,9 +27,8 @@ const NoticesSection = () => {
       });
     } catch (error) {
       console.error('Error fetching notices from Google Sheet:', error);
-      setError("Failed to load data from Google Sheets. Using local data instead.");
+      setError("Failed to load data from Google Sheets. Showing local data instead.");
       setNotices(noticesData);
-      
       toast({
         variant: "destructive",
         title: "Error loading data",
@@ -46,18 +41,8 @@ const NoticesSection = () => {
   };
 
   useEffect(() => {
-    if (useSheetData) {
-      fetchNoticesFromGoogleSheet();
-    } else {
-      // Use local JSON data
-      setNotices(noticesData);
-      setError(null);
-    }
-  }, [useSheetData]);
-
-  const toggleDataSource = () => {
-    setUseSheetData(prev => !prev);
-  };
+    fetchNoticesFromGoogleSheet();
+  }, []);
 
   return (
     <section id="notices" className="page-section bg-gray-50">
@@ -65,36 +50,11 @@ const NoticesSection = () => {
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold text-ignou-dark mb-2">Latest Notices & Updates</h2>
           <p className="text-gray-600 mb-4">Stay updated with the latest announcements from IGNOU</p>
-          <Button 
-            variant="outline" 
-            onClick={toggleDataSource}
-            className="flex items-center gap-2 mb-6"
-            disabled={loading}
-          >
-            <RefreshCw className={`h-4 w-4 ${loading ? 'animate-spin' : ''}`} />
-            {loading ? "Loading..." : (useSheetData ? "Using Google Sheet Data" : "Using Local Data")}
-          </Button>
-          
+
           {error && (
             <div className="flex items-center justify-center gap-2 text-amber-600 mb-4">
               <AlertTriangle size={16} />
               <p className="text-sm">{error}</p>
-            </div>
-          )}
-          
-          {useSheetData && !error && (
-            <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-md text-left mb-6 max-w-xl mx-auto">
-              <h4 className="font-bold text-blue-700 mb-1">Google Sheet Format</h4>
-              <p className="text-sm text-blue-600 mb-2">
-                To update notices, use the following columns in your Google Sheet:
-              </p>
-              <ul className="list-disc ml-5 text-sm text-blue-600">
-                <li><strong>category</strong>: Admission/Examination/Assignment/Results</li>
-                <li><strong>title</strong>: The notice title</li>
-                <li><strong>date</strong>: Format: Month Day, Year (e.g., April 10, 2025)</li>
-                <li><strong>description</strong>: A brief description of the notice</li>
-                <li><strong>link</strong>: URL to the full notice</li>
-              </ul>
             </div>
           )}
         </div>

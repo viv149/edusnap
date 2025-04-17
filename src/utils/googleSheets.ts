@@ -30,6 +30,7 @@ export const fetchNoticesFromSheet = async (sheetId: string): Promise<SheetNotic
       throw new Error(`Failed to fetch data: ${response.status}`);
     }
     const data = await response.json();
+    console.log("SheetData", data);
     return data as SheetNotice[];
   } catch (error) {
     console.error("Error fetching sheet data:", error);
