@@ -18,8 +18,8 @@ const NoticesSection = () => {
     setError(null);
     
     try {
-      const sheetId = 'c06f2b1d-b74e-4d08-9bc6-16224eab8b00';
-      const data = await fetchNoticesFromSheet(sheetId);
+      const URL = 'https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLjXlMWIoNXkv9b6Q2-id-FceUh10fumwUQThg43zuq6kuuSsqFW1_-jG8Yz69U8QqW1k3-RSSaetGw12D6Wb7rzoB6-Hvorw6pItfCtbxqNCWAMvrxXsPLavQzhYlQ3PVbeZLZDE9zQFc_71OtM-UTUTdKPKqGbo7ERnrC__Hwe6989u4tQbEx5lNqs5N3aW68fkAinau_J3kmG3B3W2yFzmHIA-TYWhdNeIy4pvasfq4R3WSMScubU6nOO1ukZSt4siR8HOfgWWzQW5ZE_Dj9WBpiTxVC7zvmpJOEo&lib=MaxfsNVxpVoW9bX8V-F9C9uAH1y8iT0Th';
+      const data = await fetchNoticesFromSheet(URL);
       setNotices(data);
       
       toast({

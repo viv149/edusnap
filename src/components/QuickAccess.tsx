@@ -26,7 +26,7 @@ const QuickAccess = () => {
     {
       icon: <Calendar className="h-6 w-6 mb-2" />,
       text: "Assignment Submission",
-      href: "https://ignou.ac.in/userfiles/Assignment%20submission.pdf",
+      href: "https://webservices.ignou.ac.in/assignments/",
       color: "bg-green-100 text-green-700"
     },
     {

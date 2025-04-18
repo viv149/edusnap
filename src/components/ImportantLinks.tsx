@@ -47,12 +47,15 @@ const ImportantLinks = () => {
     setError(null);
     
     try {
-      const sheetId = '1HGjBcS9RvqSAy0OZTTn8ZTTJITqT38y2D__oOlp_BWo';
-      
-      const officialPortalsLinks = await fetchLinksFromSheet(sheetId, 'OfficialPortals');
-      const academicResourcesLinks = await fetchLinksFromSheet(sheetId, 'AcademicResources');
-      const examinationsLinks = await fetchLinksFromSheet(sheetId, 'Examinations');
-      const supportLinks = await fetchLinksFromSheet(sheetId, 'Support');
+      const academic_url = 'https://script.google.com/macros/s/AKfycbw71jdXWQuT4gmFJUJotB1nwbPpCN-jOLlL4Wfy_JfywRQ_yFctQQVRVn7vlQmXNelaCA/exec';
+      const officialPortals_url = '';
+      const examination_url = '';
+      const support_url = '';
+
+      const officialPortalsLinks = await fetchLinksFromSheet(officialPortals_url);
+      const academicResourcesLinks = await fetchLinksFromSheet(academic_url);
+      const examinationsLinks = await fetchLinksFromSheet(examination_url);
+      const supportLinks = await fetchLinksFromSheet(support_url);
       
       setOfficialPortals(officialPortalsLinks);
       setAcademicResources(academicResourcesLinks);

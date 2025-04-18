@@ -20,36 +20,23 @@ export interface SheetLink {
 
 /**
  * Fetches notice data from a Google Sheet via SheetDB API
- * @param sheetId The Google Sheet ID or SheetDB endpoint ID
+ * @param URL The Google Sheet URL or SheetDB endpoint ID
  * @returns An array of notices
  */
-export const fetchNoticesFromSheet = async (sheetId: string): Promise<SheetNotice[]> => {
+export const fetchNoticesFromSheet = async (URL: string): Promise<SheetNotice[]> => {
   try {
-    const response = await fetch(`https://api.sheetbest.com/sheets/${sheetId}`);
+    const response = await fetch(URL);
     if (!response.ok) {
       throw new Error(`Failed to fetch data: ${response.status}`);
     }
     const data = await response.json();
-    return data as SheetNotice[];
+    return data.data as SheetNotice[];
   } catch (error) {
     console.error("Error fetching sheet data:", error);
     throw error;
   }
 };
 
-export const fetchImportantFromSheet = async (sheetId: string): Promise<SheetNotice[]> => {
-  try {
-    const response = await fetch(`https://api.sheetbest.com/sheets/${sheetId}`);
-    if (!response.ok) {
-      throw new Error(`Failed to fetch data: ${response.status}`);
-    }
-    const data = await response.json();
-    return data as SheetNotice[];
-  } catch (error) {
-    console.error("Error fetching sheet data:", error);
-    throw error;
-  }
-};
 
 /**
  * IGNOU Help Hub Google Sheet Formats
@@ -172,17 +159,18 @@ export const fetchImportantFromSheet = async (sheetId: string): Promise<SheetNot
 // graduation-cap, bell, calendar, clock, helpCircle, info,
 // link, mail, messageSquare, phone, settings, user
 
-export const fetchLinksFromSheet = async (sheetId: string, sheetName: string): Promise<SheetLink[]> => {
+export const fetchLinksFromSheet = async (url: string): Promise<SheetLink[]> => {
   try {
     // Add sheet name to the API endpoint to fetch specific sheet data
-    const response = await fetch(`https://sheetdb.io/api/v1/${sheetId}?sheet=${sheetName}`);
+    const response = await fetch(url);
     if (!response.ok) {
-      throw new Error(`Failed to fetch ${sheetName} data: ${response.status}`);
+      throw new Error(`Failed to fetch data: ${response.status}`);
     }
     const data = await response.json();
-    return data as SheetLink[];
+    console.log("Impotanrt", data);
+    return data.data as SheetLink[];
   } catch (error) {
-    console.error(`Error fetching ${sheetName} sheet data:`, error);
+    console.error(`Error fetching sheet data:`, error);
     throw error;
   }
 };

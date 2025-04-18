@@ -62,15 +62,15 @@ const AssignmentHelp = () => {
   // Sample handwritten assignment images - Using more appropriate images
   const sampleImages = [
     {
-      src: "/assets/images/notes-1.jpg",
+      src: "/assets/images/notes-6.jpg",
       alt: "Handwritten Assignment Sample 1"
     },
     {
-      src: "/assets/images/notes-2.jpg",
+      src: "/assets/images/notes-8.jpg",
       alt: "Handwritten Assignment Sample 2"
     },
     {
-      src: "/assets/images/notes-3.jpg",
+      src: "/assets/images/notes-9.jpg",
       alt: "Handwritten Assignment Sample 3"
     }
   ];
@@ -158,7 +158,7 @@ const AssignmentHelp = () => {
               </div>
             </div>
             <img 
-              src="/assets/images/notes.jpg" 
+              src="/assets/images/notes-8.jpg" 
               alt="Assignment Help" 
               className="rounded-lg shadow-md w-full md:w-1/3 object-cover" 
               style={{ aspectRatio: "3/2" }}
