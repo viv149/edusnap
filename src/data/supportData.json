@@ -1,15 +1,27 @@
 
 [
   {
-    "icon": "mapPin",
-    "title": "Regional Centre List",
-    "description": "Find your nearest IGNOU Regional Centre",
-    "url": "https://ignou.ac.in/ignou/aboutignou/regional/website"
+    "icon": "headphones",
+    "title": "IGNOU Call Center",
+    "description": "Contact IGNOU support via phone",
+    "url": "https://www.ignou.ac.in/userfiles/Contact_RC_Address_Jurisdiction.pdf"
   },
   {
     "icon": "globe",
-    "title": "Student Support Portal",
-    "description": "Get help with various student services",
-    "url": "http://www.ignou.ac.in/ignou/studentzone"
+    "title": "Regional Centers",
+    "description": "Find your nearest IGNOU Regional Center",
+    "url": "https://www.ignou.ac.in/ignou/aboutignou/regional/website"
+  },
+  {
+    "icon": "mapPin",
+    "title": "Study Centers",
+    "description": "Locate IGNOU study centers near you",
+    "url": "https://www.ignou.ac.in/ignou/aboutignou/learning/lsc/4"
+  },
+  {
+    "icon": "fileText",
+    "title": "Student Handbook",
+    "description": "Access the IGNOU student handbook",
+    "url": "https://www.ignou.ac.in/userfiles/Student-Handbook-and-Prospectus.pdf"
   }
 ]

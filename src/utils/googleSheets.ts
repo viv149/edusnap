@@ -30,7 +30,20 @@ export const fetchNoticesFromSheet = async (sheetId: string): Promise<SheetNotic
       throw new Error(`Failed to fetch data: ${response.status}`);
     }
     const data = await response.json();
-    console.log("SheetData", data);
+    return data as SheetNotice[];
+  } catch (error) {
+    console.error("Error fetching sheet data:", error);
+    throw error;
+  }
+};
+
+export const fetchImportantFromSheet = async (sheetId: string): Promise<SheetNotice[]> => {
+  try {
+    const response = await fetch(`https://api.sheetbest.com/sheets/${sheetId}`);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch data: ${response.status}`);
+    }
+    const data = await response.json();
     return data as SheetNotice[];
   } catch (error) {
     console.error("Error fetching sheet data:", error);

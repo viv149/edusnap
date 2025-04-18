@@ -1,17 +1,14 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MessageSquare, Mail, Phone, AlertCircle } from "lucide-react";
 
 const ContactSection = () => {
-  // WhatsApp contact function
   const contactWhatsApp = () => {
     const message = "Hi, I'd like to inquire about IGNOU services";
     window.open(`https://wa.me/919145855703?text=${encodeURIComponent(message)}`, '_blank');
   };
 
-  // FAQ items
   const faqItems = [
     {
       question: "How do I submit my assignments?",
@@ -61,7 +58,7 @@ const ContactSection = () => {
               <h3 className="text-lg font-semibold mb-2">Email Support</h3>
               <p className="text-gray-600 mb-4">Send us an email for detailed inquiries</p>
               <Button asChild variant="outline">
-                <a href="mailto:support@ignouhelphub.com">rks914585@gmail.com</a>
+                <a href="mailto:rks914585@gmail.com">rks914585@gmail.com</a>
               </Button>
             </CardContent>
           </Card>
@@ -74,7 +71,7 @@ const ContactSection = () => {
               <h3 className="text-lg font-semibold mb-2">Phone Support</h3>
               <p className="text-gray-600 mb-4">Call us during business hours for immediate assistance</p>
               <Button asChild variant="outline">
-                <a href="tel:+919876543210">+91 9145855703</a>
+                <a href="tel:+919145855703">+91 91458 55703</a>
               </Button>
             </CardContent>
           </Card>

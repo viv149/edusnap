@@ -1,15 +1,26 @@
-
 [
   {
-    "icon": "bookOpen",
-    "title": "eGyankosh",
-    "description": "Access study materials and resources",
-    "url": "http://egyankosh.ac.in/"
+    "icon": "book",
+    "title": "Digital Resources",
+    "description": "Access digital study materials and e-content",
+    "url": "https://egyankosh.ac.in/"
   },
   {
-    "icon": "fileText",
-    "title": "Assignment Status",
-    "description": "Check your assignment submission status",
-    "url": "https://admission.ignou.ac.in/changeadmdata/StatusAssignment.ASP"
+    "icon": "headphones",
+    "title": "IGNOU Podcast",
+    "description": "Listen to educational podcasts",
+    "url": "https://freedom2learn.ignouonline.ac.in/pages/"
+  },
+  {
+    "icon": "monitor",
+    "title": "WEAS Portal",
+    "description": "Web-enabled Academic Support",
+    "url": "https://sites.google.com/ignou.ac.in/weas"
+  },
+  {
+    "icon": "book",
+    "title": "IGNOU Udyami",
+    "description": "Access entrepreneurship resources",
+    "url": "https://sites.google.com/ignou.ac.in/ignouudyami/"
   }
 ]

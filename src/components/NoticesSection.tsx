@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Calendar, FileText, ExternalLink, AlertTriangle } from "lucide-react";
+import { Calendar, FileText, ExternalLink, RefreshCw, AlertTriangle, Download } from "lucide-react";
 import noticesData from "@/data/notices.json";
 import { fetchNoticesFromSheet, SheetNotice } from "@/utils/googleSheets";
 import { useToast } from "@/hooks/use-toast";
 
 const NoticesSection = () => {
   const [notices, setNotices] = useState<SheetNotice[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [useSheetData, setUseSheetData] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const { toast } = useToast();
 
@@ -20,6 +21,7 @@ const NoticesSection = () => {
       const sheetId = 'c06f2b1d-b74e-4d08-9bc6-16224eab8b00';
       const data = await fetchNoticesFromSheet(sheetId);
       setNotices(data);
+      
       toast({
         title: "Success!",
         description: "Latest notices loaded from Google Sheets",
@@ -27,8 +29,9 @@ const NoticesSection = () => {
       });
     } catch (error) {
       console.error('Error fetching notices from Google Sheet:', error);
-      setError("Failed to load data from Google Sheets. Showing local data instead.");
+      setError("Failed to load data from Google Sheets. Using local data instead.");
       setNotices(noticesData);
+      
       toast({
         variant: "destructive",
         title: "Error loading data",
@@ -40,9 +43,40 @@ const NoticesSection = () => {
     }
   };
 
+  const handleDownloadCSV = () => {
+    const headers = ['category', 'title', 'date', 'description', 'link'];
+    const csvContent = [
+      headers.join(','),
+      ...notices.map(notice => [
+        notice.category,
+        `"${notice.title.replace(/"/g, '""')}"`,
+        notice.date,
+        `"${notice.description.replace(/"/g, '""')}"`,
+        notice.link
+      ].join(','))
+    ].join('\n');
+
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'ignou_notices.csv';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   useEffect(() => {
-    fetchNoticesFromGoogleSheet();
-  }, []);
+    if (useSheetData) {
+      fetchNoticesFromGoogleSheet();
+    } else {
+      setNotices(noticesData);
+      setError(null);
+    }
+  }, [useSheetData]);
+
+  const toggleDataSource = () => {
+    setUseSheetData(prev => !prev);
+  };
 
   return (
     <section id="notices" className="page-section bg-gray-50">
@@ -50,13 +84,36 @@ const NoticesSection = () => {
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold text-ignou-dark mb-2">Latest Notices & Updates</h2>
           <p className="text-gray-600 mb-4">Stay updated with the latest announcements from IGNOU</p>
-
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <Button 
+              variant="outline" 
+              onClick={toggleDataSource}
+              className="flex items-center gap-2"
+              disabled={loading}
+            >
+              <RefreshCw className={`h-4 w-4 ${loading ? 'animate-spin' : ''}`} />
+              {loading ? "Loading..." : (useSheetData ? "Using Google Sheet Data" : "Using Local Data")}
+            </Button>
+            
+            <Button
+              variant="outline"
+              onClick={handleDownloadCSV}
+              className="flex items-center gap-2"
+              disabled={loading || notices.length === 0}
+            >
+              <Download className="h-4 w-4" />
+              Download Notices Sheet
+            </Button>
+          </div>
+          
           {error && (
             <div className="flex items-center justify-center gap-2 text-amber-600 mb-4">
               <AlertTriangle size={16} />
               <p className="text-sm">{error}</p>
             </div>
           )}
+          
+         
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -80,7 +137,11 @@ const NoticesSection = () => {
                 <CardDescription className="line-clamp-2">{notice.description}</CardDescription>
               </CardHeader>
               <CardFooter>
-                <Button asChild variant="outline" className="w-full flex items-center justify-center text-ignou-purple hover:text-white">
+                <Button 
+                  asChild 
+                  variant="outline" 
+                  className="w-full flex items-center justify-center bg-white hover:bg-ignou-purple hover:text-white transition-colors"
+                >
                   <a href={notice.link} target="_blank" rel="noopener noreferrer">
                     <FileText className="h-4 w-4 mr-2" />
                     Read Full Notice
@@ -93,8 +154,17 @@ const NoticesSection = () => {
         </div>
         
         <div className="mt-8 text-center">
-          <Button asChild variant="outline" className="text-ignou-purple hover:bg-ignou-purple hover:text-white">
-            <a href="https://ignou.ac.in/bulletinboard/announcements/latest/1" target="_blank" rel="noopener noreferrer" className="flex items-center">
+          <Button 
+            asChild 
+            variant="outline" 
+            className="text-ignou-purple hover:bg-ignou-purple hover:text-white transition-colors"
+          >
+            <a 
+              href="https://www.ignou.ac.in/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center"
+            >
               View All Notices
               <ExternalLink className="ml-2 h-4 w-4" />
             </a>

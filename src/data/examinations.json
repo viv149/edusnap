@@ -7,9 +7,21 @@
     "url": "https://exam.ignou.ac.in/"
   },
   {
-    "icon": "award",
-    "title": "Grade Card / Results",
-    "description": "Check your examination results",
-    "url": "https://ignou.ac.in/ignou/studentzone/results/1"
+    "icon": "user",
+    "title": "Hall Ticket Download",
+    "description": "Download your examination hall ticket",
+    "url": "https://hall_ticket.ignou.ac.in/HALLticketdec23//ignouhallticketdec2023.aspx"
+  },
+  {
+    "icon": "fileText",
+    "title": "Previous Question Papers",
+    "description": "Access previous years' question papers",
+    "url": "https://webservices.ignou.ac.in/Pre-Question/"
+  },
+  {
+    "icon": "fileText",
+    "title": "Assignments",
+    "description": "Access and submit your assignments",
+    "url": "https://webservices.ignou.ac.in/assignments/"
   }
 ]

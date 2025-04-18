@@ -2,14 +2,20 @@
 [
   {
     "icon": "globe",
-    "title": "IGNOU Home Page",
+    "title": "University Website",
     "description": "Official website of Indira Gandhi National Open University",
-    "url": "https://ignou.ac.in/"
+    "url": "https://www.ignou.ac.in/"
   },
   {
     "icon": "graduationcap",
-    "title": "Admission Portal",
-    "description": "Register and apply for IGNOU programs",
-    "url": "https://ignouadmission.samarth.edu.in/"
+    "title": "ABC Account",
+    "description": "Access your Academic Bank of Credits account",
+    "url": "https://ignou.samarth.edu.in/index.php/abc/app/index"
+  },
+  {
+    "icon": "user",
+    "title": "ID Card",
+    "description": "Download your IGNOU Student ID Card",
+    "url": "https://ignou.samarth.edu.in/index.php/vidhyarthi/id-card/index"
   }
 ]
