@@ -21,6 +21,12 @@
     "icon": "book",
     "title": "IGNOU Udyami",
     "description": "Access entrepreneurship resources",
-    "url": "https://sites.google.com/ignou.ac.in/ignouudyami/"
+    "url": "https://sites.google.com/ignou.ac.in/ignouudyami"
+  },
+  {
+    "icon": "television",
+    "title": "Educational Television",
+    "description": "Access educational resources",
+    "url": "https://www.ignouonline.ac.in/gyandarshan/"
   }
 ]

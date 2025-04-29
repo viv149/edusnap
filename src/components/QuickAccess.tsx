@@ -20,19 +20,19 @@ const QuickAccess = () => {
     {
       icon: <FileText className="h-6 w-6 mb-2" />,
       text: "Admission Notice",
-      href: "https://ignou.ac.in/announcements",
+      href: "https://www.ignou.ac.in/",
       color: "bg-blue-100 text-blue-700"
     },
     {
       icon: <Calendar className="h-6 w-6 mb-2" />,
       text: "Assignment Submission",
-      href: "https://webservices.ignou.ac.in/assignments/",
+      href: "https://webservices.ignou.ac.in/assignments",
       color: "bg-green-100 text-green-700"
     },
     {
       icon: <Bell className="h-6 w-6 mb-2" />,
       text: "Exam Notice",
-      href: "https://ignou.ac.in/ignou/bulletinboard/announcements/latest/1",
+      href: "https://exam.ignou.ac.in",
       color: "bg-yellow-100 text-yellow-700"
     },
     {
@@ -64,12 +64,16 @@ const QuickAccess = () => {
               {item.onClick ? (
                 <>
                   {item.icon}
-                  <span className="text-sm font-medium text-center">{item.text}</span>
+                  <span className="text-sm font-medium text-center break-words text-wrap max-w-[90px] truncate">
+                    {item.text}
+                  </span>
                 </>
               ) : (
                 <a href={item.href} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center h-full w-full">
                   {item.icon}
-                  <span className="text-sm font-medium text-center">{item.text}</span>
+                  <span className="text-sm font-medium text-center break-words text-wrap max-w-[90] truncate">
+                    {item.text}
+                  </span>
                 </a>
               )}
             </Button>

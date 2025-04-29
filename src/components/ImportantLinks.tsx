@@ -110,7 +110,7 @@ const ImportantLinks = () => {
           <h2 className="text-3xl font-bold text-ignou-dark mb-2">Important Links</h2>
           <p className="text-gray-600 mb-6">Quick access to official IGNOU resources and portals</p>
           
-          <Button 
+          {/* <Button 
             variant="outline" 
             onClick={toggleDataSource}
             className="flex items-center gap-2 mb-6"
@@ -118,9 +118,9 @@ const ImportantLinks = () => {
           >
             <RefreshCw className={`h-4 w-4 ${loading ? 'animate-spin' : ''}`} />
             {loading ? "Loading..." : (useSheetData ? "Using Google Sheet Data" : "Using Local Data")}
-          </Button>
+          </Button> */}
 
-          {useSheetData && !error && (
+          {/* {useSheetData && !error && (
             <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-md text-left mb-6 max-w-xl mx-auto">
               <h4 className="font-bold text-blue-700 mb-1">Google Sheet Format</h4>
               <p className="text-sm text-blue-600 mb-2">
@@ -143,7 +143,7 @@ const ImportantLinks = () => {
                 </a> to make a copy of the template Google Sheet
               </p>
             </div>
-          )}
+          )} */}
 
           {error && (
             <div className="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-md text-left mb-6 max-w-xl mx-auto">
@@ -153,7 +153,7 @@ const ImportantLinks = () => {
         </div>
 
         <Tabs defaultValue="official" className="w-full">
-          <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-6">
+          <TabsList className="grid grid-cols-2 md:grid-cols-4 max-md:h-24 gap-2">
             <TabsTrigger value="official">Official Portals</TabsTrigger>
             <TabsTrigger value="academic">Academic Resources</TabsTrigger>
             <TabsTrigger value="examinations">Examinations</TabsTrigger>

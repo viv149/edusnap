@@ -84,7 +84,7 @@ const NoticesSection = () => {
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold text-ignou-dark mb-2">Latest Notices & Updates</h2>
           <p className="text-gray-600 mb-4">Stay updated with the latest announcements from IGNOU</p>
-          <div className="flex items-center justify-center gap-4 mb-6">
+          {/* <div className="flex items-center justify-center gap-4 mb-6">
             <Button 
               variant="outline" 
               onClick={toggleDataSource}
@@ -104,7 +104,7 @@ const NoticesSection = () => {
               <Download className="h-4 w-4" />
               Download Notices Sheet
             </Button>
-          </div>
+          </div> */}
           
           {error && (
             <div className="flex items-center justify-center gap-2 text-amber-600 mb-4">
