@@ -48,10 +48,10 @@ const Footer = () => {
             <h3 className="font-semibold text-lg mb-4">IGNOU Resources</h3>
             <ul className="space-y-2">
               <li><a href="https://ignou.ac.in/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">Official Website</a></li>
-              <li><a href="http://egyankosh.ac.in/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">eGyankosh</a></li>
+              <li><a href="https://egyankosh.ac.in/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">eGyankosh</a></li>
               <li><a href="https://exam.ignou.ac.in/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">Exam Registration</a></li>
-              <li><a href="https://ignou.ac.in/ignou/studentzone/results/1" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">Results Portal</a></li>
-              <li><a href="https://ignou.ac.in/ignou/aboutignou/regional/website" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">Regional Centers</a></li>
+              <li><a href="https://www.ignou.ac.in/pages/60" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">Results Portal</a></li>
+              <li><a href="https://www.ignou.ac.in/ignou/aboutignou/regional/website" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">Regional Centers</a></li>
             </ul>
           </div>
           
