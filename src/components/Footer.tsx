@@ -17,7 +17,7 @@ const Footer = () => {
             <p className="text-gray-300 mb-4">
               A one-stop portal for IGNOU students to access notices, find official links, and get assignment help.
             </p>
-            <div className="flex space-x-4">
+            {/* <div className="flex space-x-4">
               <a href="#" className="text-gray-300 hover:text-white">
                 <Facebook className="h-5 w-5" />
               </a>
@@ -30,7 +30,7 @@ const Footer = () => {
               <a href="#" className="text-gray-300 hover:text-white">
                 <Linkedin className="h-5 w-5" />
               </a>
-            </div>
+            </div> */}
           </div>
           
           <div>
